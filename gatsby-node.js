@@ -1,7 +1,31 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreateNode = function onCreateNode({ node, actions }) {
+  if (node.internal.type === 'WpPost') {
+    actions.createNodeField({
+      node,
+      name: `slug`,
+      value: `/${node.uri}`
+    })
+  }
+}
 
-// You can delete this file if you're not using it
+exports.createPages = async function createPages({ actions, graphql }) {
+  const { data } = await graphql(`
+    {
+      allWpPost {
+        nodes {
+          uri
+        }
+      }
+    }
+  `)
+
+  data.allWpPost.nodes.forEach(node => {
+    actions.createPage({
+      component: require.resolve('./src/templates/post.js'),
+      path: `/${node.uri}`,
+      context: {
+        uri: node.uri
+      }
+    })
+  })
+}

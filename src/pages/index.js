@@ -1,23 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql  } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Ticker from '../components/ticker'
+import PostPreview from '../components/post-preview'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Ticker />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    {
+      data.posts.nodes.map(post => (
+        <PostPreview key={post.title} {...post} />
+      ))
+    }
   </Layout>
 )
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    posts: allWpPost(limit: 25) {
+      nodes {
+        title
+        excerpt
+        featuredImage {
+          srcSet
+        }
+        uri
+      }
+    }
+  }
+`
 
 export default IndexPage
