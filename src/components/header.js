@@ -4,8 +4,6 @@ import { jsx } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import ShowFor from './show-for'
-
 /*
  * TODO: add categories
  */
@@ -15,6 +13,13 @@ const Header = () => {
       site {
         simplifiedDate: buildTime(formatString:"MMM DD, YYYY")
         fullDate: buildTime(formatString:"dddd, MMMM DD, YYYY")
+      }
+
+      categories: allWpCategory {
+        nodes {
+          uri
+          name
+        }
       }
     }
   `)
@@ -65,22 +70,22 @@ const Header = () => {
             width: ['100%', '75%', '50%']
           }}>
             {
-              ['World', 'U.S.', 'Politics', 'Business', 'Opinion', 'Tech', 'Science', 'Health', 'Sports']
-                .map(text => (
-                  <li key={text} sx={{
+              data.categories.nodes
+                .map(({ name, uri }) => (
+                  <li key={uri} sx={{
                     listStyleType: `none`,
                     fontSize: 1,
                     padding: 1
-                  }}><Link to={text} sx={{
+                  }}><Link to={`/${uri}`} activeClassName="active" sx={{
                     color: `text`,
                     textDecoration: `none`,
                     padding: 1,
                     transition: `transitions.ease`,
-                    ':hover': {
+                    ':hover, &.active': {
                       backgroundColor: `text`,
                       color: `background`
                     }
-                  }}>{text}</Link></li>
+                  }}>{name}</Link></li>
                 ))
             }
           </ul>

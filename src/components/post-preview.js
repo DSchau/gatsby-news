@@ -8,7 +8,7 @@ const PostPreview = ({ title, excerpt, featuredImage, uri, ...props }) => (
     borderBottom: theme => `1px solid ${theme.colors.text}`,
   }} {...props}>
     <Styled.h2><Link to={`/${uri}`}>{title}</Link></Styled.h2>
-    <Styled.div dangerouslySetInnerHTML={{ __html: excerpt }} />
+    <Styled.root dangerouslySetInnerHTML={{ __html: excerpt }} />
   </article>
 )
 

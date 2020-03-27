@@ -9,22 +9,39 @@ exports.onCreateNode = function onCreateNode({ node, actions }) {
 }
 
 exports.createPages = async function createPages({ actions, graphql }) {
-  const { data } = await graphql(`
+  const { data: { posts, categories} } = await graphql(`
     {
-      allWpPost {
+      posts: allWpPost {
         nodes {
+          uri
+        }
+      }
+
+      categories: allWpCategory {
+        nodes {
+          name
           uri
         }
       }
     }
   `)
 
-  data.allWpPost.nodes.forEach(node => {
+  posts.nodes.forEach(node => {
     actions.createPage({
       component: require.resolve('./src/templates/post.js'),
       path: `/${node.uri}`,
       context: {
         uri: node.uri
+      }
+    })
+  })
+
+  categories.nodes.forEach(node => {
+    actions.createPage({
+      component: require.resolve('./src/templates/category.js'),
+      path: `/${node.uri}`,
+      context: {
+        category: node.name
       }
     })
   })
