@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-news",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Dustin Schau <dustin@gatsbyjs.com>",
   "dependencies": {
     "@theme-ui/typography": "^0.3.0",
     "gatsby": "^2.20.7",
@@ -22,8 +22,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "theme-ui": "^0.3.1",
-    "typeface-goudy-bookletter-1911": "^0.0.72",
-    "typography-theme-doelger": "^0.16.19"
+    "typeface-goudy-bookletter-1911": "^0.0.72"
   },
   "devDependencies": {
     "@netlify/zip-it-and-ship-it": "^0.3.1",
