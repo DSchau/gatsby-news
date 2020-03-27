@@ -5,9 +5,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostPreview from '../components/post-preview'
 
-const Category = ({ data }) => (
+const Category = ({ data, pageContext }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title={pageContext.category} />
     {
       data && data.posts.nodes.map(post => (
         <PostPreview key={post.title} {...post} />
@@ -20,12 +20,7 @@ export const categoryQuery = graphql`
   query PostsByCategory($category: String!) {
     posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: $category}}}}}) {
       nodes {
-                title
-        excerpt
-        featuredImage {
-          srcSet
-        }
-        uri
+        ...WpPostPreviewFragment
       }
     }
   }
