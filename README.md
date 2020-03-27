@@ -8,7 +8,7 @@
   📰 Gatsby News 📰
 </h1>
 
-A news application, for Gatsby! Read all about it!
+A news application, for Gatsby! Extra, extra, read all about it!
 
 ## 🚀 Quick start
 
