@@ -32,7 +32,7 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={`${title} | Breaking News, World News & Multimedia`}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
