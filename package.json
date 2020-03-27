@@ -22,7 +22,8 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "theme-ui": "^0.3.1",
-    "typeface-goudy-bookletter-1911": "^0.0.72"
+    "typeface-goudy-bookletter-1911": "^0.0.72",
+    "typography-theme-doelger": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^2.0.2"

@@ -6389,6 +6389,11 @@ graphql@^14.1.1, graphql@^14.6.0:
   dependencies:
     iterall "^1.2.2"
 
+gray-percentage@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gray-percentage/-/gray-percentage-2.0.0.tgz#b72a274d1b1379104a0050b63b207dc53fe56f99"
+  integrity sha1-tyonTRsTeRBKAFC2OyB9xT/lb5k=
+
 gud@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
@@ -12146,6 +12151,19 @@ typeface-goudy-bookletter-1911@^0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-goudy-bookletter-1911/-/typeface-goudy-bookletter-1911-0.0.72.tgz#f3b24032dadde0a2fb85bdfdb3916baed735cc83"
   integrity sha512-XgA6tIFA4DvarMG2GbDc1NB5kNGPhfYbChOYp0/fP67yG0JWBLaD8gToJ64HuzaZ9zh5CKVA34LSSBawP3SuCQ==
+
+typography-breakpoint-constants@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.16.19.tgz#e0e89147749562cbb46ce76c47ff0f73372765e7"
+  integrity sha512-vXjfV9hwAXIOf5+U5GN137ahBkK+sj1TJu/5ksmP+8XB/D80lmGb/m0nKviWaQ3t7HLrK848VGrFS+6E2vcmVg==
+
+typography-theme-doelger@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-theme-doelger/-/typography-theme-doelger-0.16.19.tgz#dffe36af0ef4c7edf4ffeb9428bf00e85338b19d"
+  integrity sha512-/6woeY4PeZKICOLT2b3DBdABScKZRHsDX8rjpXH+zGTpoBOwDU9BHyUCneCr0hNiw3vxMqB2DKhpWwTtWd1DEA==
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.19"
 
 unbzip2-stream@^1.0.9:
   version "1.3.3"

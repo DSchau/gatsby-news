@@ -15,12 +15,12 @@ const Header = () => {
         fullDate: buildTime(formatString:"dddd, MMMM DD, YYYY")
       }
 
-      categories: allWpCategory {
-        nodes {
-          uri
-          name
-        }
+      categories: allWpCategory(sort: {fields: name, order: DESC}, filter: {name: {ne: "Uncategorized"}}) {
+    nodes {
+        name
+        uri
       }
+  }
     }
   `)
   return (

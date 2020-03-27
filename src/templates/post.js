@@ -1,15 +1,21 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { Styled } from "theme-ui"
 
 const Post = ({ data: { post }}) => (
   <Layout>
     <SEO title="Home" />
-    <h1>{post.title}</h1>
-    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    <Styled.div sx={{
+      margin: '0 auto',
+      width: ['100%', '85ch']
+    }}>
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </Styled.div>
   </Layout>
 )
 

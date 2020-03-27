@@ -22,12 +22,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     posts: allWpPost(limit: 25) {
       nodes {
-        title
-        excerpt
-        featuredImage {
-          srcSet
-        }
-        uri
+        ...WpPostPreviewFragment
       }
     }
   }
