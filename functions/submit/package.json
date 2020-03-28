@@ -1,0 +1,9 @@
+{
+  "name": "function-submit",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "yup": "^0.28.3"
+  }
+}
