@@ -6,6 +6,7 @@ const POST_FRAGMENT = `
   author {
     name
   }
+  date
   slug
   featuredImage {
     altText
@@ -60,6 +61,7 @@ async function fetchData({ limit = 5000 } = {}) {
       endCursor = posts.pageInfo.endCursor
       allPosts = allPosts.concat(posts.nodes)
       count = allPosts.length
+      console.log(`Fetched ${count} of ${limit}.`)
     }
   } catch (e) {
     console.error(e)
