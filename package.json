@@ -29,6 +29,9 @@
   },
   "devDependencies": {
     "@netlify/zip-it-and-ship-it": "^0.3.1",
+    "dotenv-cli": "^3.1.0",
+    "he": "^1.2.0",
+    "lodash": "^4.17.15",
     "prettier": "^2.0.2"
   },
   "keywords": [
@@ -42,6 +45,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "local": "dotenv node scripts/upload/index.js",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "workspaces": [

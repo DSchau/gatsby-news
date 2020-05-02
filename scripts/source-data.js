@@ -15,6 +15,7 @@ const POST_FRAGMENT = `
   }
   content
   excerpt
+  title
   categories {
     nodes {
       name
@@ -33,7 +34,7 @@ const POST_FRAGMENT = `
 `
 
 async function fetchData({ limit = 5000 } = {}) {
-  const makeQuery = endCursor => `
+  const makeQuery = (endCursor) => `
     {
       posts(first: 100, where: {
         status: PUBLISH
@@ -53,11 +54,14 @@ async function fetchData({ limit = 5000 } = {}) {
   let endCursor = ``
   try {
     while (count <= limit) {
-      const { posts = {} } = await request(`https://www.denverpost.com/graphql`, makeQuery(endCursor))
+      const { posts = {} } = await request(
+        `https://www.denverpost.com/graphql`,
+        makeQuery(endCursor)
+      )
       if (!posts || !posts.pageInfo.endCursor) {
         break
       }
-  
+
       endCursor = posts.pageInfo.endCursor
       allPosts = allPosts.concat(posts.nodes)
       count = allPosts.length
@@ -69,15 +73,18 @@ async function fetchData({ limit = 5000 } = {}) {
     const base = path.join(__dirname, `..`, `data`)
 
     await fs.mkdirp(base)
-  
-    await fs.writeFile(path.join(base, `posts.json`), JSON.stringify(allPosts, null, 2))
-  
+
+    await fs.writeFile(
+      path.join(base, `posts.json`),
+      JSON.stringify(allPosts, null, 2)
+    )
+
     return allPosts
   }
 }
 
 module.exports = fetchData
 
-fetchData().then(posts => {
+fetchData().then((posts) => {
   console.log(posts)
 })
