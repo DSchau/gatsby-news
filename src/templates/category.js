@@ -18,7 +18,7 @@ const Category = ({ data, pageContext }) => (
 
 export const categoryQuery = graphql`
   query PostsByCategory($category: String!) {
-    posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: $category}}}}}) {
+    posts: allWpPost(limit: 25, sort: { order: ASC, fields: date }, filter: {categories: {nodes: {elemMatch: {name: {eq: $category}}}}}) {
       nodes {
         ...WpPostPreviewFragment
       }

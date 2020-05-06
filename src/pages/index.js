@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
 
 export const pageQuery = graphql`
   query IndexQuery {
-    posts: allWpPost(limit: 25) {
+    posts: allWpPost(limit:25, filter: {categories: {nodes: {elemMatch: {name: {eq: "Latest News"}}}}}) {
       nodes {
         ...WpPostPreviewFragment
       }
