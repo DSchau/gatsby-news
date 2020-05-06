@@ -1,6 +1,5 @@
 const path = require('path')
 const fs = require('fs-extra')
-const format = require('date-fns/format')
 
 const { zipFunctions } = require('@netlify/zip-it-and-ship-it');
 
@@ -29,6 +28,9 @@ exports.onCreateNode = function onCreateNode({ node, actions }) {
 exports.createPages = async function createPages({ actions, graphql }) {
   const { data: { posts, categories} } = await graphql(`
     {
+      site {
+        date: buildTime(formatString:"YYYY-MM-DD")
+      }
       posts: allWpPost {
         nodes {
           uri
@@ -48,7 +50,7 @@ exports.createPages = async function createPages({ actions, graphql }) {
     component: require.resolve(`./src/templates/today.js`),
     path: `/today/`,
     context: {
-      date: format(new Date(), `MMMM-yy-dd`)
+      date: data.site.data
     }
   })
 

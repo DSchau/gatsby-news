@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 
 import { Link, useStaticQuery, graphql } from "gatsby"
+import ColorToggle from './color-mode-toggle'
 import PropTypes from "prop-types"
 
 /*
@@ -48,8 +49,9 @@ const Header = () => {
               The Gatsby Times
             </Link>
           </h1>
-          <h2 sx={{ margin: 0, fontSize: [12, 1] }}>
-            <Link to="/today/">
+          <h2 sx={{ display: `flex`, flexDirection: `column`, alignItems: `center`, margin: 0, fontSize: [12, 1] }}>
+            <ColorToggle />
+            <Link to="/today/" sx={{ display: `block` }}>
               Today<span sx={{ display: [`none`, `none`, `inline-block`]}}>{`'s Paper`}</span>
             </Link>
           </h2>

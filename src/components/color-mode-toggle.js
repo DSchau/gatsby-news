@@ -52,8 +52,8 @@ const IconWrapper = styled.button`
 
 const MoonOrSun = styled.div`
   border: ${p => (p.isDark ? `4px` : `2px`)} solid
-    ${p => p.theme.colors.navigation.socialLink};
-  background: ${p => p.theme.colors.navigation.socialLink};
+    ${p => p.theme.colors.text};
+  background: ${p => p.theme.colors.text};
   border-radius: 50%;
   height: 24px;
   overflow: ${p => (p.isDark ? `visible` : `hidden`)};
@@ -64,7 +64,7 @@ const MoonOrSun = styled.div`
 
   &::before {
     border-radius: 50%;
-    border: 2px solid ${p => p.theme.colors.navigation.socialLink};
+    border: 2px solid ${p => p.theme.colors.text};
     content: "";
     height: 24px;
     opacity: ${p => (p.isDark ? 0 : 1)};
@@ -78,14 +78,14 @@ const MoonOrSun = styled.div`
 
   &::after {
     border-radius: 50%;
-    box-shadow: 0 -23px 0 ${p => p.theme.colors.navigation.socialLink},
-      0 23px 0 ${p => p.theme.colors.navigation.socialLink},
-      23px 0 0 ${p => p.theme.colors.navigation.socialLink},
-      -23px 0 0 ${p => p.theme.colors.navigation.socialLink},
-      15px 15px 0 ${p => p.theme.colors.navigation.socialLink},
-      -15px 15px 0 ${p => p.theme.colors.navigation.socialLink},
-      15px -15px 0 ${p => p.theme.colors.navigation.socialLink},
-      -15px -15px 0 ${p => p.theme.colors.navigation.socialLink};
+    box-shadow: 0 -23px 0 ${p => p.theme.colors.text},
+      0 23px 0 ${p => p.theme.colors.text},
+      23px 0 0 ${p => p.theme.colors.text},
+      -23px 0 0 ${p => p.theme.colors.text},
+      15px 15px 0 ${p => p.theme.colors.text},
+      -15px 15px 0 ${p => p.theme.colors.text},
+      15px -15px 0 ${p => p.theme.colors.text},
+      -15px -15px 0 ${p => p.theme.colors.text};
     content: "";
     height: 8px;
     left: 50%;
@@ -103,7 +103,7 @@ const MoonOrSun = styled.div`
 `
 
 const MoonMask = styled.div`
-  background: ${p => p.theme.colors.white};
+  background: ${p => p.theme.colors.background};
   border-radius: 50%;
   border: 0;
   height: 24px;
@@ -124,7 +124,7 @@ function DarkModeToggle({ i18n }) {
     event.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
   }
-  const label = i18n._(isDark ? t`Activate light mode` : t`Activate dark mode`)
+  const label = isDark ? `Activate light mode` : `Activate dark mode`
 
   return (
     <IconWrapper
