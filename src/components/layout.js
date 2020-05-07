@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <Styled.root sx={{
       margin: `0 auto`,
-      padding: [1, `0 5vw`, `0 10vw`]
+      padding: [1, `0 5vw`, `0 12.5vw`]
     }}>
       <Header />
       <main>{children}</main>

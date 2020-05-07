@@ -16,6 +16,15 @@ const Post = ({ data: { post }}) => (
       'h1, h2, h3, h4, h5, h6': {
         fontFamily: 'heading',
         fontWeight: 700
+      },
+      a: {
+        color: 'accent'
+      },
+      h2: {
+        fontSize: [2, 3, 4]
+      },
+      h3: {
+        fontSize: [1, 2, 3]
       }
     }}>
       <h1 sx={{

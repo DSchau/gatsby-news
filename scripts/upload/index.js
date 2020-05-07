@@ -36,7 +36,11 @@ async function upload({ type = 'posts' } = {}) {
     const { mutation, normalize } = require('./posts')
     const normalized = normalize(data, authors)
 
-    for (let post of normalized) {
+    let index = 0
+
+    for (let post of normalized.slice(300)) {
+      console.log(`uploading post ${index} (${post.title})`)
+      index += 1
       await client.request(mutation, post)
         .catch(e => {
           // again, fails, but not sure why

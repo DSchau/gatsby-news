@@ -12,6 +12,8 @@ export default () => (
   }}>
     © {new Date().getFullYear()}, Built with
     {` `}
-    <a href="https://www.gatsbyjs.org">Gatsby</a>
+    <a href="https://www.gatsbyjs.com" sx={{
+      color: 'accent'
+    }}>Gatsby</a>
   </footer>
 )

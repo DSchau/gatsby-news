@@ -8,6 +8,8 @@
   📰 Gatsby News 📰
 </h1>
 
+*All content sourced from The Denver Post's API. Copyright ©️ Denver Post and used merely for illustrative purposes.*
+
 A news application, for Gatsby! Extra, extra, read all about it!
 
 ## 🚀 Quick start
