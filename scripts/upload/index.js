@@ -38,7 +38,7 @@ async function upload({ type = 'posts' } = {}) {
 
     let index = 0
 
-    for (let post of normalized.slice(300)) {
+    for (let post of normalized.slice(350)) {
       console.log(`uploading post ${index} (${post.title})`)
       index += 1
       await client.request(mutation, post)

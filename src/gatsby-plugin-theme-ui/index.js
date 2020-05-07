@@ -41,7 +41,6 @@ export default {
     heading: `'Goudy Bookletter 1911', system-ui, serif`,
     monospace: "Menlo, monospace",
   },
-  breakpoints: ['40em', '56em', '64em'],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -50,9 +49,6 @@ export default {
   lineHeights: {
     body: 1.5,
     heading: 1.125,
-  },
-  transitions: {
-    ease: `175ms ease-in-out`
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
