@@ -57,7 +57,7 @@ exports.createPages = async function createPages({ actions, graphql }) {
   posts.nodes.forEach(node => {
     actions.createPage({
       component: require.resolve('./src/templates/post.js'),
-      path: `/${node.uri}`,
+      path: node.uri,
       context: {
         uri: node.uri
       }
@@ -67,7 +67,7 @@ exports.createPages = async function createPages({ actions, graphql }) {
   categories.nodes.forEach(node => {
     actions.createPage({
       component: require.resolve('./src/templates/category.js'),
-      path: `/${node.uri}`,
+      path: node.uri,
       context: {
         category: node.name
       }

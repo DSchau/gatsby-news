@@ -42,7 +42,7 @@ const Header = () => {
               {data.site.fullDate}
             </span>
           </h2>
-          <h1 sx={{ margin: 0, fontSize: [3, 4, 5] }}>
+          <h1 sx={{ margin: 0, fontFamily: `UnifrakturMaguntia`, fontSize: [3, 4, 6] }}>
             <Link
               to="/"
             >

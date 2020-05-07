@@ -25,7 +25,8 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "theme-ui": "^0.3.1",
-    "typeface-goudy-bookletter-1911": "^0.0.72"
+    "typeface-goudy-bookletter-1911": "^0.0.72",
+    "typeface-unifrakturmaguntia": "^0.0.72"
   },
   "devDependencies": {
     "@netlify/zip-it-and-ship-it": "^0.3.1",

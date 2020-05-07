@@ -21,6 +21,9 @@ const Ticker = () => {
           }
         }
       }
+      site {
+        day: buildTime(formatString: "dddd")
+      }
     }
   `)
   return (
@@ -34,7 +37,7 @@ const Ticker = () => {
         [
           {
             image: data.file.childImageSharp,
-            heading: 'Your Thursday Evening Briefing',
+            heading: `Your ${data.site.day} Evening Briefing`,
             description: `Here's what you need to know at the end of the day.`
           },
           {

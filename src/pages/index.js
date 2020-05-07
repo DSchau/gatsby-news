@@ -1,22 +1,9 @@
 import React from "react"
-import { Link, graphql  } from "gatsby"
+import { graphql  } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Ticker from '../components/ticker'
-import PostPreview from '../components/post-preview'
+import Page from '../components/page'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <Ticker />
-    {
-      data.posts.nodes.map(post => (
-        <PostPreview key={post.title} {...post} />
-      ))
-    }
-  </Layout>
-)
+const IndexPage = props => <Page {...props} />
 
 export const pageQuery = graphql`
   query IndexQuery {

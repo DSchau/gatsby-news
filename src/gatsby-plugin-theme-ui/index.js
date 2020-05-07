@@ -1,4 +1,5 @@
 import 'typeface-goudy-bookletter-1911'
+import 'typeface-unifrakturmaguntia'
 
 const lightModeColors = {
   accent: '#247BA0',

@@ -11,7 +11,7 @@ const PostPreview = ({ title, excerpt, featuredImage, uri, ...props }) => (
     {featuredImage && featuredImage.remoteFile && (
       <Image {...featuredImage.remoteFile.childImageSharp} />
     )}
-    <Styled.h2><Link to={`/${uri}`}>{title}</Link></Styled.h2>
+    <Styled.h2><Link to={uri}>{title}</Link></Styled.h2>
     <Styled.root dangerouslySetInnerHTML={{ __html: excerpt }} />
   </article>
 )
@@ -19,17 +19,17 @@ const PostPreview = ({ title, excerpt, featuredImage, uri, ...props }) => (
 export const postPreviewFragment = graphql`
   fragment WpPostPreviewFragment on WpPost {
     title
-        excerpt
-        featuredImage {
-          remoteFile {
-            childImageSharp {
-              fluid(maxWidth:400) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+    excerpt
+    featuredImage {
+      remoteFile {
+        childImageSharp {
+          fluid(maxWidth:400) {
+            ...GatsbyImageSharpFluid
           }
         }
-        uri
+      }
+    }
+    uri
   }
 `
 

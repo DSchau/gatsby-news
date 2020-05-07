@@ -12703,6 +12703,11 @@ typeface-goudy-bookletter-1911@^0.0.72:
   resolved "https://registry.yarnpkg.com/typeface-goudy-bookletter-1911/-/typeface-goudy-bookletter-1911-0.0.72.tgz#f3b24032dadde0a2fb85bdfdb3916baed735cc83"
   integrity sha512-XgA6tIFA4DvarMG2GbDc1NB5kNGPhfYbChOYp0/fP67yG0JWBLaD8gToJ64HuzaZ9zh5CKVA34LSSBawP3SuCQ==
 
+typeface-unifrakturmaguntia@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-unifrakturmaguntia/-/typeface-unifrakturmaguntia-0.0.72.tgz#2c314a0ebf54d522c9ceb84fa338bbf3b698b6d4"
+  integrity sha512-+arjO+M5PK9CEMtJm7KWCxZS4NIhxHx04iBuTKiU95JyB9xD4YBpfU5Y3NYqUPvUj3YnNJbPvq9B9Ayt0JE8ug==
+
 typescript@^3.6.4:
   version "3.8.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
