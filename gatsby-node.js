@@ -26,7 +26,7 @@ exports.onCreateNode = function onCreateNode({ node, actions }) {
 }
 
 exports.createPages = async function createPages({ actions, graphql }) {
-  const { data: { posts, categories} } = await graphql(`
+  const { data: { posts, site, categories} } = await graphql(`
     {
       site {
         date: buildTime(formatString:"YYYY-MM-DD")
@@ -50,7 +50,7 @@ exports.createPages = async function createPages({ actions, graphql }) {
     component: require.resolve(`./src/templates/today.js`),
     path: `/today/`,
     context: {
-      date: data.site.data
+      date: site.date
     }
   })
 
