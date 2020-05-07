@@ -33,9 +33,11 @@ module.exports = {
       options: {
         url: `http://44.233.251.53/graphql`,
         excludeFields: [`attributes`],
+        nodeUpdateInterval: 100000,
         schema: {
           queryDepth: 5,
           typePrefix: `Wp`,
+          timeout: 60 * 5 * 1000 // 5 minutes
         },
       }
     }

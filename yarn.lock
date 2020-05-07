@@ -6848,7 +6848,7 @@ gatsby-source-filesystem@^2.2.2:
     valid-url "^1.0.9"
     xstate "^4.8.0"
 
-gatsby-source-wordpress-experimental@^0.1.10:
+gatsby-source-wordpress-experimental@0.1.10:
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-experimental/-/gatsby-source-wordpress-experimental-0.1.10.tgz#34864d6856d6980a6b9a391137eb440032ccb3cc"
   integrity sha512-hObDbNPQb/zCRo1vB2fU50kZ1nnAN61LMgl3ESt5U9uwuCR7se1RQh8ariA5hge3wgCxaLG6/HleV81o4bHnwQ==
