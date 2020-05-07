@@ -67,6 +67,9 @@ export default {
       transition: 'background 0.25s ease-in-out, color 0.25s ease-in-out',
       height: '100%',
     },
+    "a": {
+      color: 'accent'
+    },
     "img": {
       "padding": 0,
       "margin": 0,

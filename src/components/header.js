@@ -34,7 +34,7 @@ const Header = () => {
           justifyContent: `space-between`,
           alignItems: `flex-end`
         }}>
-          <h2 sx={{ margin: 0, fontSize: [12, 1] }}>
+          <h2 sx={{ margin: 0, fontWeight: `normal`, fontSize: [10, 12] }}>
             <span sx={{ display: [`inline-block`, `none`]}}>
               {data.site.simplifiedDate}
             </span>
@@ -45,13 +45,17 @@ const Header = () => {
           <h1 sx={{ margin: 0, fontFamily: `UnifrakturMaguntia`, fontSize: [3, 4, 6] }}>
             <Link
               to="/"
+              sx={{
+                color: `text`,
+                textDecoration: `none`
+              }}
             >
               The Gatsby Times
             </Link>
           </h1>
-          <h2 sx={{ display: `flex`, flexDirection: `column`, alignItems: `center`, margin: 0, fontSize: [12, 1] }}>
+          <h2 sx={{ display: `flex`, flexDirection: `column`, alignItems: `center`, margin: 0, fontSize: [10, 12], fontWeight: `normal` }}>
             <ColorToggle />
-            <Link to="/today/" sx={{ display: `block` }}>
+            <Link to="/today/" sx={{ display: `block`, color: 'accent', textDecoration: `none` }}>
               Today<span sx={{ display: [`none`, `none`, `inline-block`]}}>{`'s Paper`}</span>
             </Link>
           </h2>
@@ -78,7 +82,7 @@ const Header = () => {
                     listStyleType: `none`,
                     fontSize: 1,
                     padding: 1
-                  }}><Link to={`/${uri}`} activeClassName="active" sx={{
+                  }}><Link to={uri} activeClassName="active" sx={{
                     color: `text`,
                     textDecoration: `none`,
                     padding: 1,
