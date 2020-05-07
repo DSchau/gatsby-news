@@ -7,7 +7,7 @@ const IndexPage = props => <Page {...props} />
 
 export const pageQuery = graphql`
   query IndexQuery {
-    posts: allWpPost(limit:25, filter: {categories: {nodes: {elemMatch: {name: {eq: "Latest News"}}}}}) {
+    posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Latest News"}}}}}) {
       nodes {
         ...WpPostPreviewFragment
       }
