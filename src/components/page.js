@@ -8,6 +8,7 @@ import PostPreview from '../components/post-preview'
 const Page = ({ data }) => (
   <Layout>
     <SEO title="Home" />
+    <h1>Hello World from FITC!</h1>
     <Ticker />
     {
       data.posts.nodes.map(post => (
