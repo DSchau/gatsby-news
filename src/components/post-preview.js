@@ -15,8 +15,8 @@ const PostPreview = ({ title, excerpt, featuredImage, uri, tags: tagNodes, ...pr
       borderTop: theme => `1px solid ${theme.colors.text}`,
       borderBottom: theme => `1px solid ${theme.colors.text}`,
     }} {...props}>
-      {featuredImage && featuredImage.remoteFile && (
-        <Image {...featuredImage.remoteFile.childImageSharp} />
+      {featuredImage && featuredImage.node && (
+        <Image {...featuredImage.node.localFile.childImageSharp} />
       )}
       <Styled.h2><Link to={uri}>{title}</Link></Styled.h2>
       <Styled.root dangerouslySetInnerHTML={{ __html: excerpt }} />
@@ -29,13 +29,15 @@ export const postPreviewFragment = graphql`
     title
     excerpt
     featuredImage {
-      remoteFile {
+      node {
+      localFile {
         childImageSharp {
           fluid(maxWidth:400) {
             ...GatsbyImageSharpFluid
           }
         }
       }
+    }
     }
     uri
     tags {
