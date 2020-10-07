@@ -9,6 +9,9 @@ const Page = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Ticker />
+    <h1 sx={{
+      color: `rebeccapurple`
+    }}>Uh oh this is bad</h1>
     {
       data.posts.nodes.map(post => (
         <PostPreview key={post.title} {...post} />
