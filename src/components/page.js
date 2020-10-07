@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
